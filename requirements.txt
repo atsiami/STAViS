@@ -1,0 +1,10 @@
+imageio==2.3.0
+matplotlib==3.0.2
+numpy==1.16.2
+Pillow==5.2.0
+scipy==1.2.1
+six==1.11.0
+torch==0.4.1
+torchaudio==0.2
+torchlight==1.0
+torchvision==0.2.1
