@@ -28,9 +28,9 @@ def train_epoch(epoch, nEpochs, data_loader, model, optimizer, opt,
         data_time.update(time.time() - end_time)
 
         if not opt.no_cuda:
-            targets['salmap'] = targets['salmap'].cuda(async=True)
-            targets['binmap'] = targets['binmap'].cuda(async=True)
-            valid['sal'] = valid['sal'].cuda(async=True)
+            targets['salmap'] = targets['salmap'].cuda()
+            targets['binmap'] = targets['binmap'].cuda()
+            valid['sal'] = valid['sal'].cuda()
 
         inputs = data['rgb']
         targets['salmap'] = targets['salmap'].float()
