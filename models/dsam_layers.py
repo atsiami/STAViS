@@ -24,7 +24,7 @@ class dsam_score_dsn(nn.Module):
         self.upscale_ = nn.ConvTranspose2d(1, 1, kernel_size=2 ** (1 + i), stride=2 ** i, bias=False)
         self.upscale = nn.ConvTranspose2d(16, 16, kernel_size=2 ** (1 + i), stride=2 ** i, bias=False)
 
-    def forward(self,x,crop_h, crop_w):
+    def forward(self, x, crop_h, crop_w):
 
         self.crop_h = crop_h
         self.crop_w = crop_w

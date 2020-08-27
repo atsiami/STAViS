@@ -274,14 +274,14 @@ class ResNet(nn.Module):
         aud = self.soundnet8(aud)
         aud = [aud]
 
-        crop_h, crop_h = int(x.size()[-2]), int(x.size()[-1])
+        crop_h, crop_w = int(x.size()[-2]), int(x.size()[-1])
         side = []
         side_out = []
         x = self.conv1(x)
         x = self.bn1(x)
         x = self.relu(x)
 
-        (tmp, tmp_, att_tmp) = self.score_dsn[0](x, crop_h, crop_h)
+        (tmp, tmp_, att_tmp) = self.score_dsn[0](x, crop_h, crop_w)
 
         att = spatial_softmax(att_tmp)
         att = att.unsqueeze(1)
@@ -292,7 +292,7 @@ class ResNet(nn.Module):
 
         x = self.layer1(x)
 
-        (tmp, tmp_, att_tmp) = self.score_dsn[1](x, crop_h, crop_h)
+        (tmp, tmp_, att_tmp) = self.score_dsn[1](x, crop_h, crop_w)
 
         att = spatial_softmax(att_tmp)
         att = att.unsqueeze(1)
@@ -302,8 +302,8 @@ class ResNet(nn.Module):
         x = self.layer2(x)
 
         if self.audiovisual:
-            y = self.fusion3(x, aud, crop_h, crop_h)
-        (tmp, tmp_, att_tmp) = self.score_dsn[2](x, crop_h, crop_h)
+            y = self.fusion3(x, aud, crop_h, crop_w)
+        (tmp, tmp_, att_tmp) = self.score_dsn[2](x, crop_h, crop_w)
 
         att = spatial_softmax(att_tmp)
         att = att.unsqueeze(1)
@@ -312,7 +312,7 @@ class ResNet(nn.Module):
         x = torch.mul(1+att, x)
         x = self.layer3(x)
 
-        (tmp, tmp_, att_tmp) = self.score_dsn[3](x, crop_h, crop_h)
+        (tmp, tmp_, att_tmp) = self.score_dsn[3](x, crop_h, crop_w)
 
         att = spatial_softmax(att_tmp)
         att = att.unsqueeze(1)
