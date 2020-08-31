@@ -20,7 +20,7 @@ python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
 	--annotation_path_summe_train ./data/fold_lists/SumMe_list_train_${split}_fps.txt \
 	--annotation_path_summe_test ./data/fold_lists/SumMe_list_test_${split}_fps.txt \
 	--annotation_path_etmd_train ./data/fold_lists/ETMD_av_list_train_${split}_fps.txt \
-	--annotation_path_etmd_test ./data/fold_lists/ETMDa_av_list_test_${split}_fps.txt \
+	--annotation_path_etmd_test ./data/fold_lists/ETMD_av_list_test_${split}_fps.txt \
 	--annotation_path_avad_train ./data/fold_lists/AVAD_list_train_${split}_fps.txt \
 	--annotation_path_avad_test ./data/fold_lists/AVAD_list_test_${split}_fps.txt
 
@@ -40,7 +40,7 @@ python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
 	--annotation_path_summe_train ./data/fold_lists/SumMe_list_train_${split}_fps.txt \
 	--annotation_path_summe_test ./data/fold_lists/SumMe_list_test_${split}_fps.txt \
 	--annotation_path_etmd_train ./data/fold_lists/ETMD_av_list_train_${split}_fps.txt \
-	--annotation_path_etmd_test ./data/fold_lists/ETMDa_av_list_test_${split}_fps.txt \
+	--annotation_path_etmd_test ./data/fold_lists/ETMD_av_list_test_${split}_fps.txt \
 	--annotation_path_avad_train ./data/fold_lists/AVAD_list_train_${split}_fps.txt \
 	--annotation_path_avad_test ./data/fold_lists/AVAD_list_test_${split}_fps.txt
 
@@ -60,6 +60,6 @@ python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
 	--annotation_path_summe_train ./data/fold_lists/SumMe_list_train_${split}_fps.txt \
 	--annotation_path_summe_test ./data/fold_lists/SumMe_list_test_${split}_fps.txt \
 	--annotation_path_etmd_train ./data/fold_lists/ETMD_av_list_train_${split}_fps.txt \
-	--annotation_path_etmd_test ./data/fold_lists/ETMDa_av_list_test_${split}_fps.txt \
+	--annotation_path_etmd_test ./data/fold_lists/ETMD_av_list_test_${split}_fps.txt \
 	--annotation_path_avad_train ./data/fold_lists/AVAD_list_train_${split}_fps.txt \
 	--annotation_path_avad_test ./data/fold_lists/AVAD_list_test_${split}_fps.txt
