@@ -6,7 +6,7 @@ function create_qsub_avsal(res_path, annot_base_path, pred_path)
 fid1=fopen(['eval_code/DIEM_eval.sh'],'w');
 fprintf(fid1,'#!/usr/bin/env bash\n\n');
 for split=1:3
-    for i=1:20
+    for i=1:17
         fprintf(fid1,'matlab -nodesktop -nodisplay -nojvm ');
         fprintf(fid1,['-r "addpath(genpath(' char(39) './eval_code' char(39) ')); ']);
         fprintf(fid1,'eval_diem(''%s'', ''%s'', ''%s'', ''%s'', ''%s'')\"\n', pred_path, annot_base_path, res_path, num2str(i),num2str(split));
@@ -21,7 +21,6 @@ for split=1:3
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
     fclose(fileID);
-    test_data = struct([]);
     vid_nums(split)=length(txt_data{1});
 end
 fid1=fopen(['eval_code/ETMD_eval.sh'],'w');
@@ -43,7 +42,6 @@ for split=1:3
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
     fclose(fileID);
-    test_data = struct([]);
     vid_nums(split)=length(txt_data{1});
 end
 
@@ -65,7 +63,6 @@ for split=1:3
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
     fclose(fileID);
-    test_data = struct([]);
     vid_nums(split)=length(txt_data{1});
 end
 fid1=fopen(['eval_code/Coutrot2_eval.sh'],'w');
@@ -86,7 +83,6 @@ for split=1:3
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
     fclose(fileID);
-    test_data = struct([]);
     vid_nums(split)=length(txt_data{1});
 end
 fid1=fopen(['eval_code/SumMe_eval.sh'],'w');
@@ -107,7 +103,6 @@ for split=1:3
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
     fclose(fileID);
-    test_data = struct([]);
     vid_nums(split)=length(txt_data{1});
 end
 fid1=fopen(['eval_code/AVAD_eval.sh'],'w');
