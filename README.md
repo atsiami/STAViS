@@ -27,7 +27,7 @@ year = {2020}
 ## Requirements
 
 * Python 3 : tested with 3.5
-* [PyTorch](http://pytorch.org/) : tested with 0.4 but might work with latest as well
+* [PyTorch](http://pytorch.org/) : tested with versions from 0.4 to 1.4.0
 * GPU support (ideally multiple) : tested with 4 NVIDIA GTX1080Ti or RTX2080Ti
 * MATLAB (for computing the evaluation metrics) : tested with R2015a or newer
 
