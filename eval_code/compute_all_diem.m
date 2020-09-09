@@ -5,7 +5,7 @@ i=1;
 for split=1:3
     annot_file = [annot_base_path '/fold_lists/DIEM_list_test_fps.txt'];
     %
-    res_path = [resultspath '/DIEM_results_all_split' num2str(split)];
+    res_path = [resultspath '/diem_results_all_split' num2str(split)];
     %
     fileID = fopen(annot_file,'r');
     txt_data = textscan(fileID,'%s','delimiter','\n');
