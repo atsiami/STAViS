@@ -23,8 +23,7 @@ def parse_opts():
         help='GPU devices ids')
     parser.add_argument(
         '--audiovisual',
-        default=True,
-        type=bool,
+        action='store_true',
         help='If True, use the full audiovisual STAViS, if False use the visual only variant.')
     parser.add_argument(
         '--sal_weights',

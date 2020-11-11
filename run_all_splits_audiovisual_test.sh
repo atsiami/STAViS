@@ -9,7 +9,7 @@ results_path='split'${split}'_results'
 mkdir -p ${base_path}'/'${results_path}
 
 python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
-    --audiovisual True --checkpoint 20 --n_epochs 60 \
+    --audiovisual --checkpoint 20 --n_epochs 60 \
     --no_train --no_val \
     --resume_path ./data/pretrained_models/stavis_audiovisual/audiovisual_split${split}_save_60.pth \
     --root_path ${base_path} --result_path ${results_path} \
@@ -29,7 +29,7 @@ results_path='split'${split}'_results'
 mkdir -p ${base_path}'/'${results_path}
 
 python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
-    --audiovisual True --checkpoint 20 --n_epochs 60 \
+    --audiovisual --checkpoint 20 --n_epochs 60 \
     --no_train --no_val \
     --resume_path ./data/pretrained_models/stavis_audiovisual/audiovisual_split${split}_save_60.pth \
     --root_path ${base_path} --result_path ${results_path} \
@@ -49,7 +49,7 @@ results_path='split'${split}'_results'
 mkdir -p ${base_path}'/'${results_path}
 
 python3 main.py --gpu_devices 0,1,2,3 --batch_size 128 --n_threads 12 \
-    --audiovisual True --checkpoint 20 --n_epochs 60 \
+    --audiovisual --checkpoint 20 --n_epochs 60 \
     --no_train --no_val \
     --resume_path ./data/pretrained_models/stavis_audiovisual/audiovisual_split${split}_save_60.pth \
     --root_path ${base_path} --result_path ${results_path} \
