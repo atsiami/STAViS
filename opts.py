@@ -282,6 +282,11 @@ def parse_opts():
         help='If true, training is not performed.')
     parser.set_defaults(no_train=False)
     parser.add_argument(
+        '--skip_optimizer',
+        action='store_true',
+        help='If true, optimizer is not loaded from the checkpoint.')
+    parser.set_defaults(skip_optimizer=False)
+    parser.add_argument(
         '--no_val',
         action='store_true',
         help='If true, validation is not performed.')
