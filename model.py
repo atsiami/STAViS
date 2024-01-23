@@ -57,17 +57,17 @@ def generate_model(opt):
 
     if not opt.no_cuda:
         model = model.cuda()
-        model = nn.DataParallel(model, device_ids=None)
+    model = nn.DataParallel(model, device_ids=None)
 
     if opt.pretrain_path:
         print('loading pretrained model {}'.format(opt.pretrain_path))
-        pretrain = torch.load(opt.pretrain_path)
+        pretrain = torch.load(opt.pretrain_path, map_location=lambda storage, loc: storage)
         assert opt.arch == pretrain['arch']
         model.load_state_dict(pretrain['state_dict'], strict=0)
 
     if opt.audio_pretrain_path:
         print('loading pretrained audio model {}'.format(opt.audio_pretrain_path))
-        pretrain_audio = torch.load(opt.audio_pretrain_path)
+        pretrain_audio = torch.load(opt.audio_pretrain_path, map_location=lambda storage, loc: storage)
         model.load_state_dict(pretrain_audio, strict=0)
 
     (parameters, name_parameters) = get_fine_tuning_parameters(model, opt.learning_rate_sal, opt.weight_decay)
