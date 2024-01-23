@@ -207,7 +207,7 @@ if __name__ == '__main__':
         assert opt.arch == checkpoint['arch']
         
         if not opt.skip_optimizer:  
-          opt.begin_epoch = checkpoint['epoch']
+            opt.begin_epoch = checkpoint['epoch']
         model.load_state_dict(checkpoint['state_dict'])
         if not opt.no_train and not opt.skip_optimizer:
             optimizer['global'].load_state_dict(checkpoint['optimizer_global'])
